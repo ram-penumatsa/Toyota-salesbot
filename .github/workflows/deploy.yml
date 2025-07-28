@@ -33,16 +33,16 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t us-central1-docker.pkg.dev/ornate-office-437905-u1/Toyota-salesbot-repo/chatbot-image:$IMAGE_TAG ./app
+          docker build -t us-central1-docker.pkg.dev/ornate-office-437905-u1/toyota-salesbot-repo/chatbot-image:$IMAGE_TAG ./app
 
       - name: Push Image to Artifact Registry
         run: |
-          docker push us-central1-docker.pkg.dev/ornate-office-437905-u1/Toyota-salesbot-repo/chatbot-image:$IMAGE_TAG
+          docker push us-central1-docker.pkg.dev/ornate-office-437905-u1/toyota-salesbot-repo/chatbot-image:$IMAGE_TAG
 
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy Toyota-salesbot-service \
-            --image=us-central1-docker.pkg.dev/ornate-office-437905-u1/Toyota-salesbot-repo/chatbot-image:$IMAGE_TAG \
+            --image=us-central1-docker.pkg.dev/ornate-office-437905-u1/toyota-salesbot-repo/chatbot-image:$IMAGE_TAG \
             --region=us-central1 \
             --platform=managed \
             --allow-unauthenticated \
