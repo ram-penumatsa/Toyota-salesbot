@@ -33,7 +33,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t us-central1-docker.pkg.dev/ornate-office-437905-u1/toyota-salesbot-repo/chatbot-image:$IMAGE_TAG ./app
+          docker build -t us-central1-docker.pkg.dev/ornate-office-437905-u1/toyota-salesbot-repo/chatbot-image:$IMAGE_TAG .
 
       - name: Push Image to Artifact Registry
         run: |
