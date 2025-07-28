@@ -5,10 +5,10 @@ provider "google" {
 }
 
 resource "google_artifact_registry_repository" "docker_repo" {
-  name     = var.artifact_repo_name
-  format   = "DOCKER"
-  location = var.region
-  description = "Docker repo for Streamlit Oracle chatbot"
+  repository_id = var.artifact_repo_name
+  format        = "DOCKER"
+  location      = var.region
+  description   = "Docker repo for Streamlit Oracle chatbot"
 }
 
 resource "google_service_account" "cloud_run_sa" {
@@ -29,7 +29,7 @@ resource "google_project_iam_member" "cloud_run_sa_registry_read" {
 }
 
 resource "google_cloud_run_service" "chatbot" {
-  name     = "Toyota-salesbot-service"
+  name     = "toyota-salesbot-service"
   location = var.region
 
   template {
