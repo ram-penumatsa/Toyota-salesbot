@@ -1,9 +1,10 @@
-name: Build and Deploy to Cloud Run
+name: Toyota Sales Bot App Build and Deploy to Cloud Run
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:  # ✅ Manual trigger enabled
 
 jobs:
   build-and-deploy:
